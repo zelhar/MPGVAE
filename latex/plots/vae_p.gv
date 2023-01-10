@@ -1,0 +1,12 @@
+digraph {
+	subgraph cluster_N {
+    rankdir=TB;
+		label=N; labeljust=r; labelloc=b;
+        z -> x;
+		z [label="z" fillcolor=white shape=ellipse style=filled];
+		x [label="x" fillcolor=grey shape=ellipse style=filled];
+    }
+    n -> z [arrowtail=tee,tailport=s,];
+    n [label="ζ", shape=box, width=0.20,height=0.2,style=filled, ];
+}
+

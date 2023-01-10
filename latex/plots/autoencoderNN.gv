@@ -1,0 +1,66 @@
+digraph {
+    rankdir=LR;
+    compound=true;
+	subgraph clusterEncoder0 {
+            label="Encoder NN"; labeljust=r; labelloc=t;
+        subgraph cluster_layer_e0 {
+            label="input"; labeljust=r; labelloc=t;
+            rank=same;
+            x1 [shape=none, label=""];
+            x2 [shape=none, label=""];
+            x3 [shape=none, label=""];
+            x4 [shape=none, label=""];
+        }
+        subgraph cluster_layer_e1 {
+            label="hidden layer(s)"; labeljust=r; labelloc=t;
+            rank=same;
+            y1 [shape=none, label=""];
+            y2 [shape=none, label=""];
+            y3 [shape=none, label=""];
+            y4 [shape=none, label=""];
+            y5 [shape=none, label=""];
+            y6 [shape=none, label=""];
+        }
+        subgraph cluster_layer_e2 {
+            label="latent space"; labeljust=r; labelloc=t;
+            rank=same;
+            z1 [shape=none, label=""];
+            z2 [shape=none, label=""];
+        }
+    }
+	subgraph clusterDecoder0 {
+            label="Decoder NN"; labeljust=r; labelloc=t;
+        subgraph cluster_layer_d0 {
+            label="latent space"; labeljust=r; labelloc=t;
+            rank=same;
+            dz1 [shape=none, label=""];
+            dz2 [shape=none, label=""];
+        }
+        subgraph cluster_layer_d1 {
+            label="hidden layer(s)"; labeljust=r; labelloc=t;
+            rank=same;
+            dy1 [shape=none, label=""];
+            dy2 [shape=none, label=""];
+            dy3 [shape=none, label=""];
+            dy4 [shape=none, label=""];
+            dy5 [shape=none, label=""];
+            dy6 [shape=none, label=""];
+        }
+        subgraph cluster_layer_d2 {
+            label="reconstruction"; labeljust=r; labelloc=t;
+            rank=same;
+            dx1 [shape=none, label=""];
+            dx2 [shape=none, label=""];
+            dx3 [shape=none, label=""];
+            dx4 [shape=none, label=""];
+        }
+    }
+    x2 -> y2 [ltail=cluster_layer_e0, lhead=cluster_layer_e1];
+    y2 -> z2 [ltail=cluster_layer_e1, lhead=cluster_layer_e2];
+    z2 -> dz2 [ltail=cluster_layer_e2, lhead=cluster_layer_d0, style=dotted,
+    arrowhead=dot,
+    label="id"];
+    dz2 -> dy2 [ltail=cluster_layer_d0, lhead=cluster_layer_d1];
+    dy2 -> dx2 [ltail=cluster_layer_d1, lhead=cluster_layer_d2];
+}
+

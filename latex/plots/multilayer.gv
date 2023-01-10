@@ -1,0 +1,34 @@
+digraph {
+    rankdir=LR;
+    compound=true;
+	subgraph cluster_layer0 {
+		label=input; labeljust=r; labelloc=t;
+        rank=same;
+        x1 [shape=circle, label=""];
+        x2 [shape=circle, label=""];
+        x3 [shape=circle, label=""];
+    }
+	subgraph cluster_layer1 {
+		label=layer1; labeljust=r; labelloc=t;
+        rank=same;
+        y1 [shape=circle, label=""];
+        y2 [shape=circle, label=""];
+        y3 [shape=circle, label=""];
+        y4 [shape=circle, label=""];
+    }
+	subgraph cluster_layer2 {
+		label=layer2; labeljust=r; labelloc=t;
+        rank=same;
+        z1 [shape=circle, label=""];
+        z2 [shape=circle, label=""];
+        z3 [shape=circle, label=""];
+    }
+	subgraph cluster_layer3 {
+        label=output;
+        w1 [shape=circle, label=""];
+        w2 [shape=circle, label=""];
+    }
+    x2 -> y2 [ltail=cluster_layer0, lhead=cluster_layer1];
+    y2 -> z2 [ltail=cluster_layer1, lhead=cluster_layer2];
+    z2 -> w2 [ltail=cluster_layer2, lhead=cluster_layer3];
+}

@@ -1,0 +1,41 @@
+digraph {
+	subgraph cluster_N {
+    rankdir=TB;
+		label=N; labeljust=r; labelloc=b;
+        {rank = same; d; y; w; }
+        {rank = same; x; c; }
+        d -> y
+        y -> z;
+        w -> z;
+        z -> x;
+        x -> z [style=dotted, arrowhead=dot,];
+        x -> w [style=dotted, arrowhead=dot,];
+        z -> y [style=dotted, arrowhead=dot,];
+        z -> d [style=dotted, arrowhead=dot,];
+		//n [label="(µ,σ)" shape=ellipse];
+		d [label="d" shape=ellipse];
+		w [label="w" shape=ellipse];
+		y [label="y" shape=ellipse];
+		z [label="z" fillcolor=white shape=ellipse style=filled];
+		x [label="x" fillcolor=grey shape=ellipse style=filled];
+		c [label="c" fillcolor=grey shape=ellipse style=filled];
+        c -> z [style=dotted, arrowhead=dot];
+        c -> w [style=dotted, arrowhead=dot];
+        c -> y [style=dotted, arrowhead=dot];
+        c -> d [style=dotted, arrowhead=dot];
+        c -> x;
+        c -> w;
+        c -> z;
+    }
+    //rankdir=LR;
+    //rankdir=BT;
+    a -> d;
+    n -> w;
+    e -> c;
+    {rank=same; a; n;}
+    a [label="α", shape=box, width=0.25,height=0.2,style=filled,];
+    n [label="ζ", shape=box, width=0.25,height=0.2,style=filled, ];
+    e [label="η", shape=box, width=0.25,height=0.2,style=filled, ];
+}
+
+

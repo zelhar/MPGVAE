@@ -1,0 +1,54 @@
+digraph {
+    rankdir=LR;
+    //size="8,8";
+	subgraph cluster_layer0 {
+		label="input"; labeljust=r; labelloc=t;
+        rank=same;
+        x1 [shape=circle, label="1"];
+        x2 [shape=circle, label="id"];
+        x3 [shape=circle, label="id"];
+    }
+	subgraph cluster_layer1 {
+		label="hidden layer 1"; labeljust=r; labelloc=t;
+        rank=same;
+        y1 [shape=circle, label="σ"];
+        y2 [shape=circle, label="σ"];
+        y3 [shape=circle, label="σ"];
+    }
+	subgraph cluster_layer2 {
+		label="hidden layer 2"; labeljust=r; labelloc=t;
+        rank=same;
+        z1 [shape=circle, label="σ"];
+        z2 [shape=circle, label="σ"];
+        z3 [shape=circle, label="σ"];
+    }
+	subgraph cluster_layer3 {
+		label="output"; labeljust=r; labelloc=t;
+        rank=same;
+        w1 [shape=circle, label="id"];
+        w2 [shape=circle, label="id"];
+        w3 [shape=circle, label="id"];
+    }
+    x1 -> y1;
+    x1 -> y2;
+    x1 -> y3;
+    x1 -> z2;
+    x2 -> z1;
+    x2 -> y1;
+    x2 -> y2;
+    x2 -> y3;
+    x3 -> z3;
+    y1 -> z1;
+    y1 -> z2;
+    y2 -> z1;
+    y2 -> z2;
+    y3 -> z1;
+    y3 -> z2;
+    z1 -> w1;
+    z1 -> w2;
+    z2 -> w1;
+    z2 -> w2;
+    y1 -> w3;
+    z3 -> w3;
+}
+

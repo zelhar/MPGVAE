@@ -1,0 +1,22 @@
+digraph {
+    compound=true;
+    rankdir=BT;
+	subgraph cluster_N {
+        {rank = same; x; c; }
+		label=N; labeljust=r; labelloc=b;
+        z -> x;
+		z [label="z" fillcolor=white shape=ellipse style=filled];
+		x [label="x" fillcolor=grey shape=ellipse style=filled];
+		c [label="c" fillcolor=grey shape=ellipse style=filled];
+        x -> z [style=dotted, 
+        arrowhead=dot,
+        ];
+        c -> z [style=dotted, 
+        arrowhead=dot,
+        ];
+        c -> z;
+    }
+    n -> c [arrowtail=tee,tailport=w,];
+    n [label="ζ", shape=box, width=0.20,height=0.2,style=filled, ];
+}
+

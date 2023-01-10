@@ -1,0 +1,11 @@
+digraph {
+    rankdir=LR;
+x0 [shape=circle, label="1"]
+x1 [shape=circle, label="id"]
+x2 [shape=circle, label="id"]
+y [shape=circle, label="σ"]
+    x0 -> y [label="b"]
+x1 ->y [label="w₁"]
+x2 -> y [label="w₂"]
+}
+

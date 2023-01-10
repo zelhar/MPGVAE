@@ -1,0 +1,18 @@
+digraph {
+	subgraph cluster_N {
+    rankdir=TB;
+		label=N; labeljust=r; labelloc=b;
+        y -> x;
+		y [label="y", fillcolor=white shape=ellipse style=filled];
+		x [label="x", fillcolor=grey shape=ellipse style=filled];
+        //x -> z [style=dotted, arrowhead=dot,];
+    }
+    p -> y [arrowtail=tee,];
+    m -> x;
+    s -> x;
+    p [label="π", width=0.20,height=0.2, ];
+    //p [label="π", shape=box, width=0.20,height=0.2,style=filled, ];
+    m [label="μ", width=0.20,height=0.2,]; 
+    s [label="Σ", idth=0.20,height=0.2,];
+}
+
